@@ -53,7 +53,7 @@ function Form() {
             <div className="ingredientform" width="1">
             <TextField className="form-item ingredient-item" name="ingredientname" value={x.ingredientname} variant="outlined" onChange={(e) => handleIngredientChange(e, i)} label="Ingredient" />
             <TextField className="form-item ingredient-item" name="quantity" value={x.quantity} onChange={(e) => handleIngredientChange(e, i)} variant="outlined" label="Quantity" />
-            <Select className="form-item ingredient-item" name="unit" value={x.unit} onChange={(e) => handleIngredientChange(e, i)}> 
+            <Select className="form-item ingredient-item ingredient-qty" name="unit" value={x.unit} onChange={(e) => handleIngredientChange(e, i)}> 
               <MenuItem value={''}><em>None</em></MenuItem>
               <MenuItem value={'teaspoons'}>Teaspoons</MenuItem>
               <MenuItem value={'tablespoons'}>Tablespoons</MenuItem>
@@ -66,7 +66,7 @@ function Form() {
         })}
         <TextField className="form-item" name="steps" value={recipeData.steps} onChange={handleChange} variant="outlined" label="Steps" fullWidth multiline rows={4} />
         <TextField className="form-item" name="image" value={recipeData.image} onChange={handleChange} variant="outlined" label="Image Url" fullWidth />
-        <Button className="form-item" variant="contained" color="primary" onSubmit={handleSubmit}>Submit</Button>
+        <Button className="form-item" variant="contained" color="primary" onSubmit={handleSubmit} fullWidth>Submit</Button>
       </form>
     </Paper>
   )
