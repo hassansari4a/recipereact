@@ -1,7 +1,10 @@
 
 import { Button, MenuItem, Paper, Select, TextField, Typography } from '@material-ui/core'
 import { AddCircle, DeleteOutline} from '@material-ui/icons'
-import react, {useState} from 'react'
+import {useState} from 'react'
+import { useDispatch } from 'react-redux'
+
+import {createRecipe} from '../../actions/recipes'
 
 function Form() { 
   const [recipeData, setRecipeData] = useState({
@@ -14,10 +17,12 @@ function Form() {
     steps: '',
     image: ''
   })
+
+  const dispatch = useDispatch()
+
   const handleChange = (e) => {
     const { name } = e.target
     setRecipeData({...recipeData, [name]: e.target.value})
-    console.log(recipeData.dishname)
   }
 
   const handleIngredientChange = (e, index) => {
@@ -40,8 +45,19 @@ function Form() {
     setRecipeData({...recipeData, ingredients : addedItem })
   }
 
-  const handleSubmit = () => {
-    console.log("Submitted")
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(createRecipe(recipeData))
+    setRecipeData({
+      dishname: '',
+      ingredients: [{
+        ingredientname : '',
+        quantity : '',
+        unit : ''
+      }],
+      steps: '',
+      image: ''
+    })
   }
   return (
     <Paper>
@@ -66,7 +82,7 @@ function Form() {
         })}
         <TextField className="form-item" name="steps" value={recipeData.steps} onChange={handleChange} variant="outlined" label="Steps" fullWidth multiline rows={4} />
         <TextField className="form-item" name="image" value={recipeData.image} onChange={handleChange} variant="outlined" label="Image Url" fullWidth />
-        <Button className="form-item" variant="contained" color="primary" onSubmit={handleSubmit} fullWidth>Submit</Button>
+        <Button className="form-item" variant="contained" color="primary" type="submit" fullWidth>Submit</Button>
       </form>
     </Paper>
   )

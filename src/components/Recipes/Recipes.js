@@ -1,6 +1,4 @@
-import { Paper, Typography, Grid } from '@material-ui/core'
-import { PostAddSharp } from '@material-ui/icons'
-import react from 'react'
+import { Grid } from '@material-ui/core'
 import Recipe from './Recipe/Recipe'
 
 function Recipes() {

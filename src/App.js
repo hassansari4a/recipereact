@@ -6,10 +6,7 @@ import { getRecipes } from './actions/recipes'
 import Form from './components/Form/Form'
 import Recipes from './components/Recipes/Recipes'
 
-import useStyles from './styles'
-
 function App() {
-  const classes = useStyles()
   const dispatch = useDispatch()
 
   // useEffect(()=>{
@@ -18,8 +15,8 @@ function App() {
 
   return (
     <Container maxwidth="lg">
-      <AppBar className={classes.appBar} className="appbar" position="static">
-        <Typography className={classes.heading} className="heading" variant="h2" align="center">Recipes!</Typography>
+      <AppBar className="appbar" position="static">
+        <Typography className="heading" variant="h2" align="center">Recipes!</Typography>
       </AppBar>
       <Grow in>
         <Container>
@@ -30,7 +27,6 @@ function App() {
             <Grid xs={12} sm={4}>
               <Form />
             </Grid>
-            
           </Grid>
         </Container>
       </Grow>
