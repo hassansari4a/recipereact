@@ -5,13 +5,14 @@ import { useDispatch } from 'react-redux'
 import { getRecipes } from './actions/recipes'
 import Form from './components/Form/Form'
 import Recipes from './components/Recipes/Recipes'
+import Filter from './components/Filter/Filter'
 
 function App() {
   const dispatch = useDispatch()
 
-  // useEffect(()=>{
-  //   dispatch(getRecipes())
-  // }, [dispatch])
+  useEffect(()=>{
+    dispatch(getRecipes())
+  }, [dispatch])
 
   return (
     <Container maxwidth="lg">
@@ -26,6 +27,7 @@ function App() {
             </Grid>
             <Grid xs={12} sm={4}>
               <Form />
+              <Filter />
             </Grid>
           </Grid>
         </Container>

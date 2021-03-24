@@ -1,17 +1,19 @@
 import { Grid } from '@material-ui/core'
+import { useSelector } from 'react-redux'
 import Recipe from './Recipe/Recipe'
 
+import react from 'react'
+
 function Recipes() {
+  const recipeData = useSelector(state => state.recipes)
   return (
-    <Grid className="container" alignContent="stretch" spacing={3}>
-      {/* {recipes.map((recipe) => (
-        <Grid key={recipe._id} item>
-          <Recipe />
+    <Grid container spacing={1}>
+      {recipeData.map((recipe, index) => (
+        <Grid item xs={12} sm={6}>
+          <Recipe key={index} recipe={recipe}/>
         </Grid>
       ))
-      } */}
-      <Recipe />
-      <Recipe />
+      }
     </Grid>
   )
 }

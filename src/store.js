@@ -6,6 +6,7 @@ import { recipeReducer } from './reducers/recipes'
 const reducers = combineReducers({
   recipes: recipeReducer,
 })
+
 const initialState = {
   recipes: localStorage.getItem('recipeData')? JSON.parse(localStorage.getItem('recipeData')) : []
 }

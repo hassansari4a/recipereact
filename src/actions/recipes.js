@@ -1,7 +1,12 @@
-const getRecipes = () => {
-  const action = {type: 'FETCH_ALL', payload: []}
+import defaultRecipe from '../data'
 
-  return action
+export const getRecipes = ()=> async(dispatch) => {
+  if (localStorage.getItem('recipeData') == null){
+    dispatch({type: 'FETCH_ALL', payload: defaultRecipe})
+  }else{  
+    const recipe = JSON.parse(localStorage.getItem('recipeData'))
+    dispatch({type: 'FETCH_ALL', payload: recipe.concat(defaultRecipe)})
+  }
 }
 
 export const createRecipe = (recipeData) => async(dispatch) =>{

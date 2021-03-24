@@ -71,9 +71,11 @@ function Form() {
             <TextField className="form-item ingredient-item" name="quantity" value={x.quantity} onChange={(e) => handleIngredientChange(e, i)} variant="outlined" label="Quantity" />
             <Select className="form-item ingredient-item ingredient-qty" name="unit" value={x.unit} onChange={(e) => handleIngredientChange(e, i)}> 
               <MenuItem value={''}><em>None</em></MenuItem>
-              <MenuItem value={'teaspoons'}>Teaspoons</MenuItem>
-              <MenuItem value={'tablespoons'}>Tablespoons</MenuItem>
-              <MenuItem value={'cups'}>Cups</MenuItem>
+              <MenuItem value={'Teaspoons'}>Teaspoons</MenuItem>
+              <MenuItem value={'Tablespoons'}>Tablespoons</MenuItem>
+              <MenuItem value={'Cups'}>Cups</MenuItem>
+              <MenuItem value={'Grams'}>Grams</MenuItem>
+              <MenuItem value={'Kilograms'}>Kilograms</MenuItem>
             </Select>
             {recipeData.ingredients.length -1 === i && <Button className="form-icon"><AddCircle color="secondary" onClick={handleAddClick}></AddCircle></Button>}
             {recipeData.ingredients.length !== 1 && <Button className="form-icon"><DeleteOutline color="secondary" onClick={() => handleRemoveClick(i)}></DeleteOutline></Button>}
