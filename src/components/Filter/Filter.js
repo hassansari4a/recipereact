@@ -1,11 +1,32 @@
-import { TextField } from '@material-ui/core'
-import react from 'react'
+import { Button, TextField } from '@material-ui/core'
+import react, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { filterRecipe, getRecipes } from '../../actions/recipes'
 
 function Filter() {
+  const dispatch = useDispatch()
+  const [filter, setFilter] = useState('')
+  
+  const handleChange = (e) => {
+    setFilter(e.target.value)
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(filterRecipe(filter))
+  }
+  const removeFilter = (e) => {
+    setFilter('')
+    dispatch(getRecipes())
+  }
+
   return(
-    <form >
-      <TextField />
+    <div className="filter-box">
+    <form  onSubmit={handleSubmit}>
+      <TextField className="filter" value={filter} onChange={handleChange} placeholder="Filter" width="auto"/>
     </form>
+    <Button className="remove-filter" onClick={removeFilter}>remove</Button>
+    </div >
   )
 }
 

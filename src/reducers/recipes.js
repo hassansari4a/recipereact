@@ -4,6 +4,8 @@ export const recipeReducer = (recipes= [], action) => {
       return action.payload
     case 'CREATE_RECIPE':
       return [...recipes, action.payload]
+    case 'FILTER_RECIPE':
+      return action.payload
     default:
       return recipes
   }

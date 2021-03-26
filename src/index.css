@@ -103,3 +103,14 @@ code {
   flex-wrap: wrap;
   box-sizing: border-box;
 }
+
+/* filter */
+
+.filter-box{
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+.remove-filter {
+  height: fit-content;
+}

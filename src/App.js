@@ -26,8 +26,8 @@ function App() {
               <Recipes />
             </Grid>
             <Grid xs={12} sm={4}>
-              <Form />
               <Filter />
+              <Form />
             </Grid>
           </Grid>
         </Container>
