@@ -27,8 +27,9 @@ export const filterRecipe = (filter) => async(dispatch) =>{
     const recipeData = recipe.concat(defaultRecipe)
     const filterData = recipeData.filter(recipe => {
       let flag = false
+      
       recipe.ingredients.forEach(ingredient => {
-        if (ingredient.ingredientname === filter) {
+        if (ingredient.ingredientname.toUpperCase() === filter.toUpperCase()) {
           flag = true
         }
       });
