@@ -1,5 +1,5 @@
 import { Button, TextField } from '@material-ui/core'
-import react, { useState } from 'react'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { filterRecipe, getRecipes } from '../../actions/recipes'

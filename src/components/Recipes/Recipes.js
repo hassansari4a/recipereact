@@ -2,8 +2,6 @@ import { Grid } from '@material-ui/core'
 import { useSelector } from 'react-redux'
 import Recipe from './Recipe/Recipe'
 
-import react from 'react'
-
 function Recipes() {
   const recipeData = useSelector(state => state.recipes)
   return (

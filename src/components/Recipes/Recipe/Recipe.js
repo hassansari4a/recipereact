@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardMedia, Typography } from '@material-ui/core'
-import react from 'react'
 
 function Recipe(props) {
   const {recipe} = props

@@ -34,7 +34,7 @@ export const filterRecipe = (filter) => async(dispatch) =>{
         }
       });
       if (flag) return recipe
-      // return recipe.ingredients.filter(ingredient => ingredient.ingredientname === filter)
+      else return null
     })
     console.log(filterData)
     dispatch({type:'FILTER_RECIPE', payload: filterData})
