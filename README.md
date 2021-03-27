@@ -17,4 +17,4 @@ To get the app running locally:
 
 Submit recipes via the form on the left side and view them in the right side. 
 
-
+Use the Filter textfield to filter recipes on the basis of ingredients. Multiple ingredients can be given with the help of "," as a separator.
