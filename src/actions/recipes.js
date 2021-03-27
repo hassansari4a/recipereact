@@ -21,7 +21,6 @@ export const createRecipe = (recipeData) => async(dispatch) =>{
 }
 
 export const filterRecipe = (filter) => async(dispatch) =>{
-  console.log("submit")
   if(localStorage.getItem('recipeData') != null) {
     const recipe = JSON.parse(localStorage.getItem('recipeData'))
     const recipeData = recipe.concat(defaultRecipe)
@@ -34,10 +33,23 @@ export const filterRecipe = (filter) => async(dispatch) =>{
             }  
           })
         });
-        if (flag == filter.length) return recipe
+        if (flag === filter.length) return recipe
         else return null
     })
-    console.log(filterData)
+    dispatch({type:'FILTER_RECIPE', payload: filterData})
+  }else {
+    const filterData = defaultRecipe.filter(recipe => {
+      let flag = 0
+        recipe.ingredients.forEach(ingredient => {
+          filter.forEach(filter => {
+            if (ingredient.ingredientname.toUpperCase() === filter.toUpperCase()) {
+              flag = flag + 1
+            }  
+          })
+        });
+        if (flag === filter.length) return recipe
+        else return null
+    })
     dispatch({type:'FILTER_RECIPE', payload: filterData})
   }
 }

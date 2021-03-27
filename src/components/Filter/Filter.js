@@ -23,7 +23,7 @@ function Filter() {
   return(
     <div className="filter-box">
     <form  onSubmit={handleSubmit}>
-      <TextField className="filter" value={filter} onChange={handleChange} placeholder="Filter (Separate with ,)" width="auto"/>
+      <TextField className="filter" value={filter} onChange={handleChange} placeholder="Filter (Separate with ,)" width="auto" required/>
     </form>
     <Button className="remove-filter" onClick={removeFilter}>remove</Button>
     </div >

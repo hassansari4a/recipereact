@@ -78,11 +78,7 @@
     ingredientname : 'Onion',
     quantity : '1',
     unit : ''
-  },{
-    ingredientname : 'Egg',
-    quantity : '2',
-    unit : ''
-  }
+  },
   ],
   steps: 'Leave pasta in a boiling pot for 9 minutes\nFry onions and tomato\nAdd eggs and seasonings\nFry the boiled pasta\nAdd coriander and stuff idk',
   image: 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'

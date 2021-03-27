@@ -1,5 +1,5 @@
 
-import { Button, MenuItem, Paper, Select, TextField, Typography } from '@material-ui/core'
+import { Button, MenuItem, Paper, Select, TextField, Typography} from '@material-ui/core'
 import { AddCircle, DeleteOutline} from '@material-ui/icons'
 import {useState} from 'react'
 import { useDispatch } from 'react-redux'
@@ -63,12 +63,12 @@ function Form() {
     <Paper>
       <form autoComplete="off" noValidate className="form" onSubmit={handleSubmit}>
         <Typography variant="h6">Create Recipe</Typography>
-        <TextField className="form-item" name = "dishname" value={recipeData.dishname} onChange={handleChange} variant="outlined" label="Name of Dish" fullWidth />
+        <TextField className="form-item" name = "dishname" value={recipeData.dishname} onChange={handleChange} variant="outlined" label="Name of Dish" fullWidth/>
         {recipeData.ingredients.map((x, i) => {
           return(
             <div className="ingredientform" width="1">
-            <TextField className="form-item ingredient-item" name="ingredientname" value={x.ingredientname} variant="outlined" onChange={(e) => handleIngredientChange(e, i)} label="Ingredient" />
-            <TextField className="form-item ingredient-item" name="quantity" value={x.quantity} onChange={(e) => handleIngredientChange(e, i)} variant="outlined" label="Quantity" />
+            <TextField className="form-item ingredient-item" name="ingredientname" value={x.ingredientname} variant="outlined" onChange={(e) => handleIngredientChange(e, i)} label="Ingredient"/>
+            <TextField className="form-item ingredient-item" name="quantity" value={x.quantity} onChange={(e) => handleIngredientChange(e, i)} variant="outlined" label="Quantity"/>
             <Select className="form-item ingredient-item ingredient-qty" name="unit" value={x.unit} onChange={(e) => handleIngredientChange(e, i)}> 
               <MenuItem value={''}><em>None</em></MenuItem>
               <MenuItem value={'Teaspoons'}>Teaspoons</MenuItem>
@@ -82,8 +82,8 @@ function Form() {
           </div> 
           )
         })}
-        <TextField className="form-item" name="steps" value={recipeData.steps} onChange={handleChange} variant="outlined" label="Steps" fullWidth multiline rows={4} />
-        <TextField className="form-item" name="image" value={recipeData.image} onChange={handleChange} variant="outlined" label="Image Url" fullWidth />
+        <TextField className="form-item" name="steps" value={recipeData.steps} onChange={handleChange} variant="outlined" label="Steps" fullWidth multiline rows={4}/>
+        <TextField className="form-item" name="image" value={recipeData.image} onChange={handleChange} variant="outlined" label="Image Url" fullWidth/>
         <Button className="form-item" variant="contained" color="primary" type="submit" fullWidth>Submit</Button>
       </form>
     </Paper>
