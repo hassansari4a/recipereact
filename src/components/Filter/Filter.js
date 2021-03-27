@@ -13,7 +13,7 @@ function Filter() {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(filterRecipe(filter))
+    dispatch(filterRecipe(filter.split(",")))
   }
   const removeFilter = (e) => {
     setFilter('')
@@ -23,7 +23,7 @@ function Filter() {
   return(
     <div className="filter-box">
     <form  onSubmit={handleSubmit}>
-      <TextField className="filter" value={filter} onChange={handleChange} placeholder="Filter" width="auto"/>
+      <TextField className="filter" value={filter} onChange={handleChange} placeholder="Filter (Separate with ,)" width="auto"/>
     </form>
     <Button className="remove-filter" onClick={removeFilter}>remove</Button>
     </div >

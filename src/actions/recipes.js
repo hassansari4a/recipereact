@@ -26,15 +26,16 @@ export const filterRecipe = (filter) => async(dispatch) =>{
     const recipe = JSON.parse(localStorage.getItem('recipeData'))
     const recipeData = recipe.concat(defaultRecipe)
     const filterData = recipeData.filter(recipe => {
-      let flag = false
-      
-      recipe.ingredients.forEach(ingredient => {
-        if (ingredient.ingredientname.toUpperCase() === filter.toUpperCase()) {
-          flag = true
-        }
-      });
-      if (flag) return recipe
-      else return null
+      let flag = 0
+        recipe.ingredients.forEach(ingredient => {
+          filter.forEach(filter => {
+            if (ingredient.ingredientname.toUpperCase() === filter.toUpperCase()) {
+              flag = flag + 1
+            }  
+          })
+        });
+        if (flag == filter.length) return recipe
+        else return null
     })
     console.log(filterData)
     dispatch({type:'FILTER_RECIPE', payload: filterData})
